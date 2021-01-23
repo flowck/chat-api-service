@@ -1,0 +1,8 @@
+package me.changani.chatapi.domain;
+
+import lombok.Value;
+
+@Value
+public class UniqueId {
+	private String value;
+}
