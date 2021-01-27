@@ -46,7 +46,6 @@ export default class User {
   }
 
   public static create({ username, password }: ICreateUser) {
-    const id = uuid();
-    return new User({ id, username, password });
+    return new User({ id: uuid(), username, password });
   }
 }

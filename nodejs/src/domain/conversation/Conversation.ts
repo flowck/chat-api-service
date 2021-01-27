@@ -1,11 +1,18 @@
+import { IMessage } from "./../message/Message";
 import { v4 as uuid } from "uuid";
 
 export interface ICreateConversation {}
-export interface IConversation {}
+
+export interface IConversation {
+  id: string;
+  createdAt: Date;
+  messages: IMessage[];
+}
 
 export default class Conversation {
   private _id!: string;
   private _createdAt!: Date;
+  private _messages!: IMessage[];
 
   set id(value: string) {
     this._id = value;
@@ -23,7 +30,25 @@ export default class Conversation {
     return this.createdAt;
   }
 
-  constructor() {}
+  set messages(value: IMessage[]) {
+    this._messages = value;
+  }
 
-  public static create(conversation: ICreateConversation) {}
+  get messages(): IMessage[] {
+    return this.messages;
+  }
+
+  constructor({ id, messages, createdAt }: IConversation) {
+    this.id = id;
+    this.messages = messages;
+    this.createdAt = createdAt;
+  }
+
+  public static create(): Conversation {
+    return new Conversation({
+      id: uuid(),
+      messages: [],
+      createdAt: new Date(),
+    });
+  }
 }
