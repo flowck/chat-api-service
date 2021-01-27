@@ -19,7 +19,7 @@ export default class Conversation {
   }
 
   get id(): string {
-    return this.id;
+    return this._id;
   }
 
   set createdAt(value: Date) {
@@ -27,7 +27,7 @@ export default class Conversation {
   }
 
   get createdAt(): Date {
-    return this.createdAt;
+    return this._createdAt;
   }
 
   set messages(value: IMessage[]) {
@@ -35,7 +35,7 @@ export default class Conversation {
   }
 
   get messages(): IMessage[] {
-    return this.messages;
+    return this._messages;
   }
 
   constructor({ id, messages, createdAt }: IConversation) {

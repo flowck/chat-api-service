@@ -55,7 +55,7 @@ export default class Message {
   }
 
   get createdAt(): Date {
-    return this.createdAt;
+    return this._createdAt;
   }
 
   constructor({ id, userId, conversationId, createdAt }: IMessage) {
