@@ -8,8 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-import me.changani.chatapi.domain.UniqueId;
-import me.changani.chatapi.domain.Username;
+
 
 @Data
 @Entity

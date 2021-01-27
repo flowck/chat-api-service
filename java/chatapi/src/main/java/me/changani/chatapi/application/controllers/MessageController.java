@@ -18,7 +18,7 @@ public class MessageController {
 	@Autowired
 	MessageUseCase messageUseCase;
 	
-	@PostMapping("")
+	@PostMapping
 	public Message sendMessage(@Valid  @RequestBody SendMessageDTO message) {
 		return messageUseCase.sendMessage(message);
 	}

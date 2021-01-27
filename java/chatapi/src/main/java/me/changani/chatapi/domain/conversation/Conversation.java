@@ -9,20 +9,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import lombok.Data;
-import me.changani.chatapi.domain.UniqueId;
+import lombok.NoArgsConstructor;
 import me.changani.chatapi.domain.message.Message;
 
 @Data
 @Entity
-@Table(name = "conversation")
+@Table(name = "conversations")
+@NoArgsConstructor
 public class Conversation {
 	@Id
 	@Column()
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	// @OneToMany(mappedBy = "conversationId")
-	// private List<Message> messages; 
+	@OneToMany(targetEntity = Message.class, mappedBy = "conversationId")
+	private List<Message> messages; 
 }

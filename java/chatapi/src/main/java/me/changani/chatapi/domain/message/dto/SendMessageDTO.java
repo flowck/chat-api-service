@@ -15,9 +15,8 @@ public class SendMessageDTO {
 	@NotNull(message = "The field message should not be null")
 	private String message;
 	
-	@NotBlank(message = "The field sender should not be empty")
 	@NotNull(message = "The field sender should not be null")
-	private String sender;
+	private Long userId;
 	
 	@NotNull(message = "The field conversationId should not be null")
 	private Long conversationId;
